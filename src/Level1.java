@@ -1,18 +1,22 @@
 public class Level1 {
-    //static String tmpStr = "";
     static String[] ma = new String[100];
-    static StringBuilder bld = new StringBuilder();
     static int i = 0;
+
+    static StringBuilder bld = new StringBuilder();
     static boolean flag = false;
-    static boolean flag2 = false;
 
     public static String BastShoe(String command) {
         int n = Character.getNumericValue(command.charAt(0));
-        int ind = command.indexOf(" ") + 1;
-        String str = command.substring(ind);
-        int len = bld.length();
+        int index = command.indexOf(" ") + 1;
+        String str = command.substring(index);
+        int strLen = bld.length();
 
         ma[i] = bld.toString();
+
+        int strNum = 0;
+        if (n == 2 || n == 3) {
+            strNum = Integer.parseInt(str);
+        }
 
         switch (n) {
             case 1:
@@ -28,6 +32,7 @@ public class Level1 {
                 break;
 
             case 2:
+                // ??? simple, please
                 if (flag) {
                     ma[0] = ma[i];
                     i = 0;
@@ -40,28 +45,22 @@ public class Level1 {
                     }
                 }
 
-                int strInt = Integer.parseInt(str);
-
-                if (strInt > bld.length()) {
-                    strInt = bld.length();
+                if (strNum > strLen) {
+                    strNum = strLen;
                 }
 
-                int del = bld.length() - strInt;
-                bld.delete(len - strInt, len);
+                bld.delete(strLen - strNum, strLen);
 
                 i++;
                 break;
 
             case 3:
-                int strInt2 = Integer.parseInt(str);
+                if (strNum >= strLen) return "";
 
-                i++;
-                return String.valueOf(bld.charAt(strInt2));
+                return String.valueOf(bld.charAt(strNum));
 
             case 4:
-                if (i != 0) {
-                    i--;
-                }
+                if (i != 0) i--;
 
                 bld.replace(0, bld.length(), ma[i]);
                 flag = true;
@@ -74,9 +73,45 @@ public class Level1 {
 
                 bld.replace(0, bld.length(), ma[i]);
                 break;
+
+            default:
+                return "";
         }
 
         return bld.toString();
     }
 
+    public static void main(String[] args) {
+        BastShoe("9");
+        BastShoe("1 Привет");
+        BastShoe("1 , Мир!");
+        BastShoe("1 ++");
+        BastShoe("2 2");
+        BastShoe("4");
+        BastShoe("4");
+        BastShoe("1 *");
+        BastShoe("4");
+        BastShoe("4");
+        BastShoe("4");
+        System.out.println(BastShoe("3 6"));
+        BastShoe("2 100");
+        BastShoe("1 Привет");
+        BastShoe("1 , Мир!");
+        BastShoe("1 ++");
+        BastShoe("4");
+        BastShoe("4");
+        BastShoe("5");
+        BastShoe("4");
+        BastShoe("5");
+        BastShoe("5");
+        BastShoe("5");
+        BastShoe("5");
+        BastShoe("4");
+        BastShoe("4");
+        BastShoe("2 2");
+        BastShoe("4");
+        BastShoe("5");
+        BastShoe("5");
+        BastShoe("5");
+    }
 }
