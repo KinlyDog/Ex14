@@ -29,6 +29,7 @@ public class Level1 {
                 bld.append(str);
 
                 i++;
+
                 break;
 
             case 2:
@@ -52,6 +53,7 @@ public class Level1 {
                 bld.delete(strLen - strNum, strLen);
 
                 i++;
+
                 break;
 
             case 3:
@@ -64,6 +66,7 @@ public class Level1 {
 
                 bld.replace(0, bld.length(), ma[i]);
                 flag = true;
+
                 break;
 
             case 5:
