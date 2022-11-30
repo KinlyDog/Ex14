@@ -52,7 +52,6 @@ public class Level1 {
                 if (strNum >= strLen) return "";
 
                 return String.valueOf(strBld.charAt(strNum));
-
             case 4:
                 if (i != 0) i--;
 
