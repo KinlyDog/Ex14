@@ -5,7 +5,7 @@ public class Level1 {
     static StringBuilder strBld = new StringBuilder();
     static boolean reset = false;
 
-    public static void resetHistory() {
+    public static void resetClipboard() {
         ma[0] = ma[i];
         i = 0;
         reset = false;
@@ -32,7 +32,7 @@ public class Level1 {
         }
 
         if (reset && (n == 1 || n == 2)) {
-            resetHistory();
+            resetClipboard();
         }
 
         switch (n) {
