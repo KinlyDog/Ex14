@@ -36,35 +36,30 @@ public class Level1 {
         }
 
         switch (n) {
-            case 1:
+            case 1 -> {
                 i++;
                 strBld.append(com);
-                break;
-
-            case 2:
+            }
+            case 2 -> {
                 i++;
                 if (strNum > strLen) strNum = strLen;
-
                 strBld.delete(strLen - strNum, strLen);
-                break;
-
-            case 3:
+            }
+            case 3 -> {
                 if (strNum >= strLen) return "";
-
                 return String.valueOf(strBld.charAt(strNum));
-            case 4:
+            }
+            case 4 -> {
                 if (i != 0) i--;
-
                 reset = true;
-
                 strBld.replace(0, strBld.length(), ma[i]);
-                break;
-
-            case 5:
+            }
+            case 5 -> {
                 if (ma[i + 1] != null) i++;
-
                 strBld.replace(0, strBld.length(), ma[i]);
-                break;
+            }
+            default -> {
+            }
         }
 
         return strBld.toString();
