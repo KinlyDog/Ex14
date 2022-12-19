@@ -18,15 +18,16 @@ public class Level1 {
     }
 
     public static String BastShoe(String command) {
-        int n = Character.getNumericValue(command.charAt(0));
         int index = command.indexOf(" ") + 1;
-
         String com = command.substring(index);
+
         int strLen = strBld.length();
 
         ma[i] = strBld.toString();
 
         int strNum = 0;
+        int n = Character.getNumericValue(command.charAt(0));
+
         if (n == 2 || n == 3) {
             strNum = Integer.parseInt(com);
         }
